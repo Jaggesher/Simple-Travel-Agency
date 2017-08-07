@@ -238,7 +238,7 @@
 
 
 
-<!-- Add package model Section -->
+<!-- Delete package model Section -->
 <div class="modal fade modal-fullscreen  " id="deletePackage"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
       <div class="modal-content">
@@ -249,16 +249,14 @@
           <div class="modal-body container-fluid">
             <div class="col-md-8 col-md-offset-2 well">
               <div class="input-group">
-                <input type="text" class="form-control" id="packageName" name="code" placeholder="Enter Package Name...">
+                <input type="text" class="form-control" id="code" name="code" placeholder="Enter Package Name...">
                 <span class="input-group-btn">
                   <button class="btn btn-secondary" type="button" id="search" name="search" >Go!</button>
                 </span>
               </div>
             </div>
-            <div class="col-md-4 col-md-offset-4" id="Content">
-            <h1>Congrats</h1>
+            <div class="col-sm-12 text-center" id="DeletingData">
             </div>
-
           </div>
       </div>
   </div>
@@ -310,7 +308,29 @@ $(document).ready(function(){
   });
 
   $(document).on('click','#search',function(){
-    alert("Congrats");
+    var Code=$("#code").val();
+    if(Code!=""){
+      $.post( "deleteIt.php",
+            {Code: Code,Action: "Send"},
+            function(data) {
+                $("#DeletingData").html(data);
+            },"html");
+    }else{
+      alert("Please Fill All Info.");
+    }
+    
+  });
+  $(document).on('click','#delete',function(){
+    var Code=$("#code").val();
+    if(Code!=""){
+      $.post( "deleteIt.php",
+            {Code: Code,Action: "delete"},
+            function(data) {
+                $("#DeletingData").html(data);
+            },"html");
+    }else{
+      alert("Please Fill All Info.");
+    }
   });
 });
 </script>

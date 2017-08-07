@@ -60,18 +60,20 @@
 			$result = $conn->query($sql);
 			if($result->num_rows > 0){
 				$row = $result->fetch_assoc();
-				$data='<div class="thumbnail">
-				        <img src="'.$row["Img"].'" class="img-responsive" style="width:100%;height: 250px;"  alt="Image">
-				        <p><strong>Name: </strong>'.$row["Name"].'</p>
-				        <p><strong>Price: </strong>'.$row["Price"].'tk</p>
-				        <p><strong>Code: </strong>'.$row["Code"].'</p>
-				        <p><strong>Call: </strong> '.$row["Mobile"].'</p>
-				        <button class="btn btn-primary" id="delete"> Delete It.</button>
-				      </div>';
+				$data='<div class="col-md-8 col-md-offset-2 thumbnail well">
+			        <img src="'.$row["Img"].'" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
+			        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">'.$row["Name"].'</h1>
+			        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> '.$row["Duration"].'</h3>
+			        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> '.$row["Hotel"].'</h3>
+			        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong>'.$row["Transport"].'</h3>
+			        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> '.$row["Amount"].'</h3>
+			        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>'.$row["Mobile"].'</h3>
+			       <button class="btn btn-primary" id="delete"> Delete It.</button>
+			    </div>';
 				$conn->close();
 				return $data;
 			}else{
-				return '<h3 class="alert alert-danger">Product Aren\'t Available.</h3>';
+				return '<h3 class="alert alert-danger">Package Aren\'t Available.</h3>';
 			}
 	}
 
@@ -81,7 +83,7 @@
 		$sql='DELETE FROM packages WHERE Name="'.$name.'"';
 		if( $conn->query($sql)===TRUE){
 			$conn->close();
-	  		return '<h1 class="alert alert-success" style="text-aligh:center">Product Removed.</h1>';
+	  		return '<h1 class="alert alert-success" style="text-aligh:center">Package Removed.</h1>';
 	  	}else {
 	  		$err=$conn->error;
 	  		$conn->close();
