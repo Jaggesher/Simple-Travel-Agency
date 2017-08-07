@@ -38,11 +38,11 @@ body {
       font-size: 200px;
   }
   .thumbnail {
-      padding: 0 0 15px 0;
-      border: none;
-      border-radius: 0;
+      padding: 0 0 0 0;
+      border: 2px solid  #f4511e;
+      border-radius: 5px;
   }
-  .thumbnail img {
+ /* .thumbnail img {
       width: 100%;
       height: 100%;
       margin-bottom: 10px;
@@ -104,7 +104,7 @@ body {
       margin: 15px 0;
       background-color: #f4511e;
       color: #fff;
-  }
+  }*/
   .navbar {
       margin-bottom: 0;
       background-color: #f4511e;
@@ -133,6 +133,26 @@ body {
       border-color: transparent;
       color: #fff !important;
   }
+
+
+/*My */
+
+.open .dropdown-toggle {
+  color: #fff !important;
+  background-color: #f4511e !important;
+}
+.dropdown-menu li a {
+    color: #000 !important;
+}
+.dropdown-menu li a:hover {
+     background-color: #f4511e !important;
+     color: white !important;
+}
+
+
+
+
+
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;

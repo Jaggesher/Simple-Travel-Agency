@@ -31,7 +31,18 @@
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#packages">PACKAGE</a></li>
-        <li><a href="#myModal" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-log-in"></span>ADMIN</a></li>
+
+        <li class="dropdown" >
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu" style="color: black;">
+              <li><a href="#">Add Package</a></li>
+              <li><a href="#">Remove Package</a></li>
+              <li><a href="#">LogOut</a></li> 
+            </ul>
+          </li>
+
+        <li><a href="#" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-log-in"></span>ADMIN</a></li>
       </ul>
     </div>
   </div>
@@ -41,6 +52,7 @@
   <h1>DreamTravels.com</h1> 
   <p>Your Tour Our Responsiblity.</p> 
 </div>
+
 
 <!-- Container (About Section) -->
 <div id="about" class="container-fluid">
@@ -55,6 +67,8 @@
     </div>
   </div>
 </div>
+
+
 
 <div id="services" class="container-fluid bg-grey">
   <div class="row">
@@ -82,15 +96,62 @@
   </div>
 </div>
 
+
+
 <!-- Container (Package Section) -->
 <div id="packages" class="container-fluid text-center">
-  <h2>RECENT PACKAGES</h2>
-  <h4>What we offer</h4>
-  <br>
-  <div class="slideanim">
-    <h1>Sample Test</h1>
-  </div>
+    <h2>RECENT PACKAGES</h2>
+    <h4>What we offer</h4>
+    <br>
+    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
+        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
+        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
+        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
+    </div>
+    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
+        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
+        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
+        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
+    </div>
+    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
+        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
+        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
+        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
+    </div>
+    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
+        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
+        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
+        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
+    </div>
+    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
+        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
+        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
+        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
+        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
+    </div>
 </div>
+
+
+
 
 <!-- LogIn model Section -->
  <div class="modal fade" id="myModal" role="dialog">
@@ -126,6 +187,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 <footer class="container-fluid text-center">
   <a href="#myPage" title="To Top">
