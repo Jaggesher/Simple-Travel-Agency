@@ -42,7 +42,7 @@ body {
       border: 2px solid  #f4511e;
       border-radius: 5px;
   }
-  
+
   .navbar {
       margin-bottom: 0;
       background-color: #f4511e;
@@ -88,7 +88,45 @@ body {
 }
 
 
+/*Model Style Begin*/
 
+.modal.modal-fullscreen .modal-dialog {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.modal.modal-fullscreen .modal-content {
+    bottom: 0;
+    left: 0;
+    position: relative;
+    right: 0;
+    top: 0;
+    min-height: 100vh;
+}
+
+.modal.modal-fullscreen .modal-dialog {
+    margin: 0;
+    width: 100%;
+}
+
+.modal.modal-fullscreen .modal-content {
+    border: none;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: inherit;
+    -moz-box-shadow: inherit;
+    -o-box-shadow: inherit;
+    box-shadow: inherit;
+    padding: 5px;
+}
+
+.file {
+  visibility: hidden;
+  position: absolute;
+}
 
 
   footer .glyphicon {

@@ -36,9 +36,9 @@
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
             <span class="caret"></span></a>
             <ul class="dropdown-menu" style="color: black;">
-              <li><a href="#">Add Package</a></li>
-              <li><a href="#">Remove Package</a></li>
-              <li><a href="#">LogOut</a></li> 
+              <li><a href="#" data-toggle="modal" data-target="#addPackage" >Add Package</a></li>
+              <li><a href="#" data-toggle="modal" data-target="#deletePackage" >Remove Package</a></li>
+              <li><a href="LogOut.php">LogOut</a></li> 
             </ul>
           </li>
 
@@ -190,6 +190,110 @@
 
 
 
+<!-- Add package model Section -->
+<div class="modal fade modal-fullscreen  " id="addPackage"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4><span class="glyphicon glyphicon-lock"></span> Admin(add-package)</h4>
+          </div>
+          <div class="modal-body container-fluid">
+              <div class="col-md-8 col-md-offset-2 well">
+                <form action="saveProduct.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+
+                  <div class="form-group">
+                      <label class="col-md-3 control-label">Package Name:</label>
+                      <div class="col-md-8">
+                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Name." required maxlength="50">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-md-3 control-label">Duration:</label>
+                      <div class="col-md-8">
+                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Duration." required maxlength="50">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-md-3 control-label">Transport:</label>
+                      <div class="col-md-8">
+                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Transport." required maxlength="1000">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-md-3 control-label">Amount:</label>
+                      <div class="col-md-8">
+                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Duration." required maxlength="10">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-md-3 control-label">Call:</label>
+                      <div class="col-md-8">
+                          <input  class="form-control" type="text" name="name" placeholder="Enter Mobile." required maxlength="10">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <div class="form-group col-md-3" >
+                          <input type="file" name="fileToUpload" id="fileToUpload" class="file" accept="image/jpg, image/jpeg, image/png" required>
+                      </div>
+
+                      <div class="input-group col-sm-8">
+                          <span class="input-group-addon" style="padding-right: 18px;"><i class="glyphicon glyphicon-picture"></i></span>
+                          <input id="displayFileName" type="text" class="form-control" value="" readonly placeholder="Upload Image">
+                          <span class="input-group-btn">
+                              <button class="browse btn btn-primary" type="button"><i class="glyphicon glyphicon-folder-open"></i></button>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label class="col-md-3 control-label"></label>
+                      <div class="col-md-8">
+                        <button class="btn btn-primary pull-right " type="submit" style="width: 140px;"> Save</button>
+                      </div>
+                  </div>
+                </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+<!-- Add package model Section -->
+<div class="modal fade modal-fullscreen  " id="deletePackage"  tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">×</button>
+            <h4><span class="glyphicon glyphicon-lock"></span> Admin(delete-package)</h4>
+          </div>
+          <div class="modal-body container-fluid">
+            <div class="col-md-8 col-md-offset-2 well">
+              <div class="input-group">
+                <input type="text" class="form-control" id="packageName" name="code" placeholder="Enter Package Name...">
+                <span class="input-group-btn">
+                  <button class="btn btn-secondary" type="button" id="search" name="search" >Go!</button>
+                </span>
+              </div>
+            </div>
+            <div class="col-md-4 col-md-offset-4" id="Content">
+            <h1>Congrats</h1>
+            </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+
 
 
 <footer class="container-fluid text-center">
@@ -224,7 +328,14 @@ $(document).ready(function(){
         }
     });
   });
-})
+   $(document).on('click', '.browse', function() {
+      var file = $(this).parent().parent().parent().find('.file');
+      file.trigger('click');
+  });
+  $(document).on('change', '.file', function() {
+      $("#displayFileName").val($(this).val().replace(/C:\\fakepath\\/i, ''));
+  });
+});
 </script>
 
 </body>
