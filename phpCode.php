@@ -49,15 +49,14 @@
 	}
 
 	function Is_auth(){
-		return "yes";
-		// if(isset($_SESSION["status"]) && $_SESSION["status"] == "ADMIN")
-		// 	return "yes";
-		// else header('location:logIn.php');
+		if(isset($_SESSION["status"]) && $_SESSION["status"] == "ADMIN")
+			return "yes";
+		else return "no";
 	}
 
-	function GiveIT($code){
+	function GiveIT($name){
 		include 'dbConnect.php';
-			$sql='SELECT * FROM product WHERE Code="'.$code.'"';
+			$sql='SELECT * FROM packages WHERE Name="'.$name.'"';
 			$result = $conn->query($sql);
 			if($result->num_rows > 0){
 				$row = $result->fetch_assoc();
@@ -76,10 +75,10 @@
 			}
 	}
 
-	function DeleteIT($code){
+	function DeleteIT($name){
 
 		include 'dbConnect.php';
-		$sql='DELETE FROM product WHERE Code="'.$code.'"';
+		$sql='DELETE FROM packages WHERE Name="'.$name.'"';
 		if( $conn->query($sql)===TRUE){
 			$conn->close();
 	  		return '<h1 class="alert alert-success" style="text-aligh:center">Product Removed.</h1>';
@@ -89,6 +88,4 @@
 	  		return $err;
 	  	}
 	}
-	// echo InserIntotable(6,"kjm",123,"MKN","123213","dsfsdfsd","Sfsdf");
-	// echo GetLastID();
 ?>

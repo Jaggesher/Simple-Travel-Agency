@@ -1,4 +1,6 @@
 <?php
+ session_start();
+ !include "phpCode.php";
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +36,9 @@
         <li><a href="#about">ABOUT</a></li>
         <li><a href="#services">SERVICES</a></li>
         <li><a href="#packages">PACKAGE</a></li>
-
-        <li class="dropdown" >
+        <?php
+          if(is_auth()=="yes"){
+            echo '<li class="dropdown" >
             <a class="dropdown-toggle" data-toggle="dropdown" href="#">MORE
             <span class="caret"></span></a>
             <ul class="dropdown-menu" style="color: black;">
@@ -43,9 +46,11 @@
               <li><a href="#" data-toggle="modal" data-target="#deletePackage" >Remove Package</a></li>
               <li><a href="LogOut.php">LogOut</a></li> 
             </ul>
-          </li>
-
-        <li><a href="#" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-log-in"></span>ADMIN</a></li>
+          </li>';
+          }else{
+            echo '<li><a href="#" data-toggle="modal" data-target="#myModal" ><span class="glyphicon glyphicon-log-in"></span>ADMIN</a></li>';
+          }
+        ?>
       </ul>
     </div>
   </div>
@@ -106,21 +111,9 @@
     <h2>RECENT PACKAGES</h2>
     <h4>What we offer</h4>
     <br>
-
     <?php
-      !include "phpCode.php";
       echo showResult();
     ?>
-    <!-- <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
-        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
-        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
-        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
-    </div> -->
-
 </div>
 
 
@@ -137,14 +130,14 @@
           <h4><span class="glyphicon glyphicon-lock"></span> Admin</h4>
         </div>
         <div class="modal-body">
-          <form role="form">
+          <form role="form" action="LogMein.php" method="post">
             <div class="form-group">
               <label for="userid"><span class="glyphicon glyphicon-user"></span> Admin ID.</label>
-              <input type="text" class="form-control" id="userid" placeholder="Admin ID">
+              <input type="text" class="form-control" id="userid" name="userid" placeholder="Admin ID">
             </div>
             <div class="form-group">
               <label for="usrpass"><span class="glyphicon glyphicon-user"></span> Password.</label>
-              <input type="Password" class="form-control" id="usrpass" placeholder="Enter Password">
+              <input type="Password" class="form-control" id="usrpass" name="usrpass" placeholder="Enter Password">
             </div>
               <button type="submit" class="btn btn-block">Submit 
                 <span class="glyphicon glyphicon-ok"></span>

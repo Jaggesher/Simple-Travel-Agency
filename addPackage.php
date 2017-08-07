@@ -50,5 +50,7 @@
 				else echo $result;
 			}
 		}
+	}else{
+		echo "<h1>You are Not ADMIN</h1>";
 	}
 ?>
