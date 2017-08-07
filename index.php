@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -103,7 +106,12 @@
     <h2>RECENT PACKAGES</h2>
     <h4>What we offer</h4>
     <br>
-    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
+
+    <?php
+      !include "phpCode.php";
+      echo showResult();
+    ?>
+    <!-- <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
         <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
         <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
         <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
@@ -111,43 +119,8 @@
         <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
         <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
         <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
-    </div>
-    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
-        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
-        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
-        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
-    </div>
-    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
-        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
-        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
-        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
-    </div>
-    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
-        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
-        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
-        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
-    </div>
-    <div class="col-md-8 col-md-offset-2 thumbnail well slideanim">
-        <img src="Images/2.jpg" class="img-responsive" style="width:100%;height: 300px;"  alt="Image">
-        <h1 style="color: #f4511e; border-bottom: 2px solid #f4511e; padding-bottom: 5px;">CoxBazar-Tour</h1>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Duration: </strong> 3days</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Hotel: </strong> 2Night/3Days(three Star)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Transport: </strong> By Road(BUS AC)</h3>
-        <h3 style="color: black; border-bottom: 2px solid #f4511e; padding-bottom: 5px;"><strong>Amount: </strong> 10,000tk</h3>
-        <h3 style="color: black; padding-bottom: 5px;"><strong>Call: </strong>01915770274</h3>
-    </div>
+    </div> -->
+
 </div>
 
 
@@ -200,40 +173,47 @@
           </div>
           <div class="modal-body container-fluid">
               <div class="col-md-8 col-md-offset-2 well">
-                <form action="saveProduct.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
+                <form action="addPackage.php" method="post" class="form-horizontal" role="form" enctype="multipart/form-data">
 
                   <div class="form-group">
                       <label class="col-md-3 control-label">Package Name:</label>
                       <div class="col-md-8">
-                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Name." required maxlength="50">
+                          <input  class="form-control" type="text" name="PacName" placeholder="Enter Package Name." required maxlength="50">
                       </div>
                   </div>
 
                   <div class="form-group">
                       <label class="col-md-3 control-label">Duration:</label>
                       <div class="col-md-8">
-                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Duration." required maxlength="50">
+                          <input  class="form-control" type="text" name="PacDuration" placeholder="Enter Package Duration." required maxlength="50">
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                      <label class="col-md-3 control-label">Hotel:</label>
+                      <div class="col-md-8">
+                          <input  class="form-control" type="text" name="PacHotel" placeholder="Enter Package Transport." required maxlength="1000">
                       </div>
                   </div>
 
                   <div class="form-group">
                       <label class="col-md-3 control-label">Transport:</label>
                       <div class="col-md-8">
-                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Transport." required maxlength="1000">
+                          <input  class="form-control" type="text" name="PacTrans" placeholder="Enter Package Transport." required maxlength="1000">
                       </div>
                   </div>
 
                   <div class="form-group">
                       <label class="col-md-3 control-label">Amount:</label>
                       <div class="col-md-8">
-                          <input  class="form-control" type="text" name="name" placeholder="Enter Package Duration." required maxlength="10">
+                          <input  class="form-control" type="text" name="PacAmount" placeholder="Enter Package Amount." required maxlength="15">
                       </div>
                   </div>
 
                   <div class="form-group">
                       <label class="col-md-3 control-label">Call:</label>
                       <div class="col-md-8">
-                          <input  class="form-control" type="text" name="name" placeholder="Enter Mobile." required maxlength="10">
+                          <input  class="form-control" type="text" name="mobile" placeholder="Enter Mobile." required maxlength="15">
                       </div>
                   </div>
 
@@ -334,6 +314,10 @@ $(document).ready(function(){
   });
   $(document).on('change', '.file', function() {
       $("#displayFileName").val($(this).val().replace(/C:\\fakepath\\/i, ''));
+  });
+
+  $(document).on('click','#search',function(){
+    alert("Congrats");
   });
 });
 </script>
