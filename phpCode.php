@@ -44,7 +44,7 @@
             return $data;
         }else{
         	$conn->close();
-        	return '<h1 class="alert alert-danger" style="margin-top: 50px ;text-aligh:center">Product Aren\'t Available.</h1>';
+        	return '<h1 class="alert alert-danger" style="margin-top: 50px ;text-aligh:center">Package Aren\'t Available.</h1>';
         }
 	}
 
