@@ -134,6 +134,10 @@ body {
       margin-bottom: 20px;
       color: #f4511e;
   }
+  footer{
+    background-color: #2d2d30;
+    color: #f5f5f5;
+  }
   .slideanim {visibility:hidden;}
   .slide {
       animation-name: slide;
