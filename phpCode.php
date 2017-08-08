@@ -12,7 +12,7 @@
 
 	function InserIntotable($id,$PacName,$PacDuration,$PacTrans,$PacHotel,$PacAmount,$mobile,$img){
 		include 'dbConnect.php';
-		$sql='INSERT INTO packages (ID,Name,Duration,Hotel,Transport,Amount,Mobile,Img) VALUES('.$id.',"'.$PacName.'","'.$PacDuration.'","'.$PacTrans.'","'.$PacHotel.'","'.$PacAmount.'","'.$mobile.'","'.$img.'")';
+		$sql='INSERT INTO packages (ID,Name,Duration,Hotel,Transport,Amount,Mobile,Img) VALUES('.$id.',"'.$PacName.'","'.$PacDuration.'","'.$PacHotel.'","'.$PacTrans.'","'.$PacAmount.'","'.$mobile.'","'.$img.'")';
 		if( $conn->query($sql)===TRUE){
 			$conn->close();
 	  		return"OK";
